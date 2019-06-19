@@ -3,7 +3,7 @@ module.exports = {
   fail,
   repair,
   get,
-};
+}; 
 
 function succeed(item) {
   return { ...item };
