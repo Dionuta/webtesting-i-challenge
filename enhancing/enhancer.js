@@ -22,7 +22,25 @@ function succeed(item) {
 }
 
 function fail(item) {
-  return { ...item };
+  if(item.enhancement < 15){
+  return { ...item,
+    name: item.name,
+    enhancement: item.enhancement,
+    durability: item.durability - 5
+   };
+  }else if(item.enhancement >= 15 && item.enhancement < 16 ){
+    return { ...item,
+      name: item.name,
+      enhancement: item.enhancement ,
+      durability: item.durability - 10
+     }
+  }else if(item.enhancement >= 16){
+    return { ...item,
+      name: item.name,
+      enhancement: item.enhancement - 1,
+      durability: item.durability - 10
+     }
+  }
 }
 
 function repair(item) {
